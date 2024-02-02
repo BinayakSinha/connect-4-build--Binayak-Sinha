@@ -3,7 +3,7 @@ import pygame
 import sys
 import math
 
-BLUE = (0,0,255)
+WOOD=pygame.image.load("wood_board.jpeg")
 BLACK = (0,0,0)
 RED = (255,0,0)
 YELLOW = (255,255,0)
@@ -53,7 +53,7 @@ def winning_move(board, piece):
 def draw_board(board):
 	for c in range(COLUMN_COUNT):
 		for r in range(ROW_COUNT):
-			pygame.draw.rect(screen, BLUE, (c*SQUARESIZE, r*SQUARESIZE+SQUARESIZE, SQUARESIZE, SQUARESIZE))
+			screen.blit(WOOD,(c*SQUARESIZE, r*SQUARESIZE+SQUARESIZE, SQUARESIZE, SQUARESIZE))
 			pygame.draw.circle(screen, BLACK, (int(c*SQUARESIZE+SQUARESIZE/2), int(r*SQUARESIZE+SQUARESIZE+SQUARESIZE/2)), RADIUS)
 	
 	for c in range(COLUMN_COUNT):
